@@ -54,10 +54,10 @@ pt:
 
     # app/views/layouts/_menu.html.erb
     dashboard:          "Dashboard"
-    assignments:        "Assignments"
+    assignments:        "Tarefas"
     users:              "Usuários"
     home:               "Home"
-    settings:           "Configuracoes"
+    settings:           "Configurações"
 
     # app/models/assignment_file.rb
     validation_messages:
@@ -69,11 +69,11 @@ pt:
     cannot_login_as_another_admin: "Você não pode conectar como outro admin."
 
     # app/views/assignments/_list_manage.html.erb
-    current_assignments:      "Current assignments:"
-    due:                       "due :"
-    no_assignments:            "There are currently no assignments."
-    class_average:             "Class Average: %{results_average}"
-    submissions_collected:     "%{count}/%{size} Submissions collected"
+    current_assignments:      "Tarefas atuais:"
+    due:                       "entrega :"
+    no_assignments:            "Não existem tarefas atualmente."
+    class_average:             "Média da classe: %{results_average}"
+    submissions_collected:     "%{count}/%{size} Submissões coletadas"
 
     # app/views/assignments/
     name: "Name"
@@ -86,9 +86,9 @@ pt:
     short_identifier:   "Short Identifier<span class='required_field'>*</span>"
     description:        "Description"
     shortened_date:     "Date<span class='required_field'>*</span>"
-    due_date:           "Due Date"
-    iso_date_format_example:    "Format:  YYYY-MM-DD - Example:  2009-01-13"
-    iso_due_date_format_example:    "Format:  YYYY-MM-DD HH:MM - Example:  2009-01-13 17:44"
+    due_date:           "Prazo de entrega"
+    iso_date_format_example:    "Formato:  YYYY-MM-DD - Exemplo:  2009-01-13"
+    iso_due_date_format_example:    "Formato:  YYYY-MM-DD HH:MM - Exemplo:  2009-01-13 17:44"
     create_new_assignment:      "Add Assignment"
     manage_course_work: "Manage Course Work"
     repository_folder:  "Repository Folder<span class='required_field'>*</span>"
