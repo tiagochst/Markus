@@ -11,16 +11,16 @@ pt:
 
     # app/views/main/login.html.erb
     welcome_to:         "Bem vindo ao MarkUs!"
-    welcome_to_markus:     "%{user_name}, bem vindo ao MarkUs, a ferramnta the avaliação online."
+    welcome_to_markus:     "%{user_name}, bem vindo ao MarkUs, a ferramenta de avaliação online."
     log_in:             "Conectar"
     logging_in:         "Conectando..."
     login:              "Login"
     login_failed:       "Falha de conexão"
     cookies_off:        "Por favor configure o seu browser para aceitar cookies."
     password_not_blank: "Sua senha não deve ser vazia."
-    username_not_blank: "Seu nome de usuario nao pode ser vazio."
+    username_not_blank: "Seu nome de usuário não pode ser vazio."
     username_and_password_not_blank: "Seu nome e senha não podem ser vazios."
-    session_expired:     "Sua sessao expirou. Por favor, conecte."
+    session_expired:     "Sua sessão expirou. Por favor, conecte."
     please_log_in:       "Por favor faça o login"
 
     # app/views/layouts/_header.html.erb
@@ -31,17 +31,17 @@ pt:
 
     # app/views/main/_about_content.html.erb
     about_markus:       "Sobre MarkUs"
-    version:            "Versao"
-    using_markus_version:       "Você esta usando MarkUs versao: "
-    using_ruby_version: "Ruby versao: "
-    using_rails_version: "Rails versao: "
+    version:            "Versão"
+    using_markus_version:       "Você esta usando MarkUs Versão: "
+    using_ruby_version: "Ruby Versão: "
+    using_rails_version: "Rails Versão: "
     license:            "Licença"
-    markus_license_OSI: "MarkUs is disponivel sob a <a href=\"http://www.opensource.org\">OSI</a>-approved <a href=\"http://www.opensource.org/licenses/mit-license.html\">licença MIT </a>."
+    markus_license_OSI: "MarkUs is disponível sob a <a href=\"http://www.opensource.org\">OSI</a>-approved <a href=\"http://www.opensource.org/licenses/mit-license.html\">licença MIT </a>."
     markus_license_permission:  "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:"
     markus_copyright_intro:     "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software."
     markus_no_warranty: "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
     markus_copyright:   "Copyright (c) 2008-2011 by the authors."
-    markus_credits:     "Creditos"
+    markus_credits:     "Créditos"
     markus_credits_thanks:      "Thanks to everyone who contributed to and made MarkUs possible. In particular to:"
     supervisors:        "Supervisores:"
     contact_us:         "Contact Us"
@@ -55,7 +55,7 @@ pt:
     # app/views/layouts/_menu.html.erb
     dashboard:          "Dashboard"
     assignments:        "Assignments"
-    users:              "Usuarios"
+    users:              "Usuários"
     home:               "Home"
     settings:           "Configuracoes"
 
@@ -66,7 +66,7 @@ pt:
     # app/views/main/index.html.erb
     switch_role:         "Trocar de papel"
     admin_password:      "Senha admin"
-    cannot_login_as_another_admin: "Você nao pode conectar como outro admin."
+    cannot_login_as_another_admin: "Você não pode conectar como outro admin."
 
     # app/views/assignments/_list_manage.html.erb
     current_assignments:      "Current assignments:"
@@ -899,11 +899,11 @@ pt:
 
     submission_file:
       error:
-        no_access: "Nao ha acesso para o arquivo de submissao com id #%{submission_file_id}."
+        no_access: "Não ha acesso para o arquivo de submissao com id #%{submission_file_id}."
         binary_file_message: "Conteudo binario: Use o botao de download para ver o arquivo!"
     test_result:
       error:
-        no_access: "Nao ha accesso para resultado do teste com id #%{test_result_id}."
+        no_access: "Não ha accesso para resultado do teste com id #%{test_result_id}."
       button:
         load: "Carregar"
       no_files_available: "[Nenhum resultado de testes disponiveis]"
@@ -915,9 +915,9 @@ pt:
 
     criteria_csv_error:
       incomplete_row: "contém poucas informaçoes."
-      name_not_unique: "Nome do critério ja utilizado nessa tarefa."
-      max_zero: "valor maximo é zero ou nao é um numero."
-      weight_not_number: "peso nao é um numero."
+      name_not_unique: "Nome do critério já utilizado nessa tarefa."
+      max_zero: "valor maximo é zero ou não é um numero."
+      weight_not_number: "peso não é um numero."
 
     csv_special_characters_html: "
     <p>Se você quer user uma virgula (,) no campo do arquivo CSV , você deve cercar o campo com aspas duplas (\").<br />
@@ -948,7 +948,7 @@ pt:
         <p>O arquivo deve possuir o seguinte formato:</p>
         <ul><li>um registro por linha;</li><li>cada linha deve terminar por carriage-return line-feed.</li></ul>
         <code>criteria_name,max_value,description</code>
-        <p>A descriçao é opcional. Repare que se isso nao existir, a segunda virgula nao deve aparecer.</p>"
+        <p>A descriçao é opcional. Repare que se isso não existir, a segunda virgula não deve aparecer.</p>"
         success: "Criterio flexivel carregado com sucesso: %{nb_updates} atualizado(s)."
 
     rubric_criteria:
@@ -997,7 +997,7 @@ pt:
         level_2: "Aceitavel"
         level_3: "Bom"
         level_4: "Excelente"
-        description_0: "Esse critario nao foi satisfeito."
+        description_0: "Esse critario não foi satisfeito."
         description_1: "Esse critario foi parcialmente satisfeito."
         description_2: "Esse critario foi satisfeito."
         description_3: "Esse critario foi bem satisfeito."
@@ -1032,14 +1032,14 @@ pt:
             link_title: "Apagar essa anotaçao"
             link_confirm: "Isso removera a anotaçao permanentemente. Continuar?"
             success: "Anotaçao apagada com sucesso ."
-            error_permissions: "Você nao possui privilegio suficiente para apagar a anotaçao."
+            error_permissions: "Você não possui privilegio suficiente para apagar a anotaçao."
         new:
             note_message: "Mensagem de observaçao"
             title: "Criar anotaçao"
             loading_groupings: "Carregando grupos..."
             loading_selector: "Loading selector..."
             invalid_selector: "Invalid selector chosen."
-            no_noteables: "Anotaçoes foram anexadas para grupos, tarefas, ou estudantes, mas nao ha nenhum ainda. Por favor crie um primeiro."
+            no_noteables: "Anotaçoes foram anexadas para grupos, tarefas, ou estudantes, mas não ha nenhum ainda. Por favor crie um primeiro."
         create:
             success: "Anotaçao criada com sucesso."
         edit:
@@ -1062,7 +1062,7 @@ pt:
     help_editing_rubric_criteria_message: "
       Selecione um critério na esquerda para edita-lo. Descriçao do criterio, nivel de cabeçalhos e descriçoes podem ser modificados. O peso para cada critério
       também pode ser alterado. Para alterar o peso para um numero fracionario digite um numero decimal na caixa de texto.
-      Note que o numero de niveis nao pode ser alterado. Mas se nao ha descricao para um nivel, o nivel nao pode ser usadi."
+      Note que o numero de niveis não pode ser alterado. Mas se não ha descrição para um nivel, o nivel não pode ser usadi."
     help_ordering_criteria_message: "
       Avaliadores verao o criterio na ordem que sao mostrados na esquerda .  Para alterar a ordem, arraste o critério para a posiçao desejada na lista."
     help_editing_flexible_criteria_message: "
@@ -1078,18 +1078,18 @@ pt:
       add_section: "Inserir nova seção"
       manage_users: "Gerenciar usuarios"
       due_dates_type: "Seção tipo de data de entrega: "
-      no_sections: "Ainda nao ha seçãos."
+      no_sections: "Ainda não ha seçãos."
       create:
         success: "Criada seção %{name} com sucesso."
         error:   "Falha na criaçao da seção."
       update:
-        success: "Atualizacao da seção %{name} com sucesso."
+        success: "Atualização da seção %{name} com sucesso."
         error:   "Falha ao atualizar seção."
       delete:
         success: "Seção apagada com sucesso."
         link_confirm: "Isso removera a seção permanente. Continuar?"
-        error_permissions: "Você nao possui permissao suficiente para apagar essa seção."
-        not_empty: "Você nao pode apagar essa seção because porque ha estudantes nela."
+        error_permissions: "Você não possui permissão suficiente para apagar essa seção."
+        not_empty: "Você não pode apagar essa seção because porque ha estudantes nela."
 
     date:
       formats:
@@ -1129,8 +1129,8 @@ pt:
     #app/views/assignments/_read.html.erb
     no_grader_assigned: "Avaliador padrao: Instructor(es) do curso"
 
-    locale_not_available: "%{locale} traduçao nao disponivel!"
-    external_authentication_not_supported: "Autentificaçao externa nao é suportado pela sua plataforma!"
+    locale_not_available: "%{locale} traduçao não disponivel!"
+    external_authentication_not_supported: "Autentificaçao externa não é suportado pela sua plataforma!"
     account_disabled: "Essa conta foi desativada"
 
     #app/views/main/_assignment_summary.html.erb
@@ -1158,7 +1158,7 @@ pt:
 
     #lib/validators/
     date_validator:
-      invalid_date: "Nao é uma data valida"
+      invalid_date: "Não é uma data valida"
 
     #Test Framework
     automated_tests:
@@ -1168,11 +1168,11 @@ pt:
       need_group_for_test: "Você precisa possuir um grupo para executar os testes"
       test: "Teste"
       revision_used_for_test: "<span class=\"prop_label\">Revision used:</span> %{revision}"
-      due_date_is_passed: "Você nao pode executar o teste pois a sua entrega esta fora do prazo "
+      due_date_is_passed: "Você não pode executar o teste pois a sua entrega esta fora do prazo "
       information: "Informaçao"
       run_tests: "Executar testes"
       need_one_file: "Você precisa de pelo menos um arquivo enviado para executar os testes.<br />
-                      Se você ja enviou um arquivo e que executar os testes nele, use o botao \"Coletar e preparar testes\" abaixo."
+                      Se você já enviou um arquivo e que executar os testes nele, use o botao \"Coletar e preparar testes\" abaixo."
       collect_and_test: "Colete e prepare os testes"
       build_xml: "build.xml"
       build_prop: "build.properties"
@@ -1187,13 +1187,13 @@ pt:
       assignment_parser_files: "Arquivos de interpretador associados"
       private: "privado?"
       replace: "Subistituir"
-      filename_exists: "ja foi tomado"
+      filename_exists: "já foi tomado"
       duplicate_filename: "Tentativa de carregamento do seguinte arquivo mais de uma vez: "
       invalid_buildxml: "Arquivo Ant build.xml deve ser nomeado build.xml"
       invalid_buildproperties: "Arquivo Ant build.properties deve ser nomeado build.properties"
-      invalid_filename: "Arquivos de testes, bibliotecas e interpretadores nao pode ser nomeado build.xml ou build.properties"
+      invalid_filename: "Arquivos de testes, bibliotecas e interpretadores não pode ser nomeado build.xml ou build.properties"
       missing_tokens: "Nenhum token foi encontrado para esse estudante e para essa tarefa"
-      dir_not_exist: "O diretorio %{dir} necessario para o Ant nao existe"
+      dir_not_exist: "O diretorio %{dir} necessario para o Ant não existe"
       token:
         tokens_form: "Tokens disponiveis por grupo"
         tokens_per_day: "<span class=\"prop_label\">Tokens por dia:</span> %{tokens}"
