@@ -86,22 +86,22 @@ module Repository
 
     #Static method: Yields an existing Repository and closes it afterwards
     def self.access(connect_string)
-      raise NotImplementedError, "Repository::create Not yet implemented"
+      raise NotImplementedError, "Repository::access Not yet implemented"
     end
 
     #Static method: Deletes an existing Subversion repository
     def self.delete(connect_string)
-      raise NotImplementedError, "Repository::create Not yet implemented"
+      raise NotImplementedError, "Repository::delete Not yet implemented"
     end
 
     #Closes the repository
     def close
-      raise NotImplementedError, "Repository::create Not yet implemented"
+      raise NotImplementedError, "Repository::close Not yet implemented"
     end
 
     #Tests if the repository is closed
     def closed?
-      raise NotImplementedError, "Repository::create Not yet implemented"
+      raise NotImplementedError, "Repository::closed Not yet implemented"
     end
 
     # Given either an array of, or a single object of class RevisionFile,
@@ -322,6 +322,7 @@ module Repository
   # A repository factory
   require File.join(File.dirname(__FILE__),'memory_repository')
   require File.join(File.dirname(__FILE__),'subversion_repository')
+  require File.join(File.dirname(__FILE__),'git_repository')
   # Returns a repository class of the requested type,
   # which implements AbstractRepository
 
@@ -356,6 +357,8 @@ module Repository
         return SubversionRepository
       when "memory"
         return MemoryRepository
+      when "git"
+        return GitRepository
       else
         raise "Repository implementation not found: #{repo_type}"
     end
