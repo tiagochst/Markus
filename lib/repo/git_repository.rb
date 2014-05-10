@@ -1,6 +1,8 @@
 require "rugged"
 require "gitolite"
 require "digest/md5"
+require 'rubygems'
+require 'ruby-debug'
 require File.join(File.dirname(__FILE__),'repository') # load repository module
 
 module Repository
@@ -9,6 +11,7 @@ module Repository
   # It implements the following paradigm:
   #   1. Repositories are created by using ???
   #   2. Existing repositories are opened by using either ???
+
   class GitRepository < Repository::AbstractRepository
 
     # Constructor: Connects to an existing Git
@@ -55,12 +58,12 @@ module Repository
 
       options = {}
       options[:tree] = index.write_tree(repo)
-
       options[:author] = { :email => "testuser@github.com", :name => 'Test Author', :time => Time.now }
       options[:committer] = { :email => "testuser@github.com", :name => 'Test Author', :time => Time.now }
       options[:message] ||= "Making a commit via Rugged!"
       options[:parents] = repo.empty? ? [] : [ repo.head.target ].compact
       options[:update_ref] = 'HEAD'
+      options[:time] =  Time.now
 
       Rugged::Commit.create(repo, options)
 
@@ -76,7 +79,6 @@ module Repository
     # at location 'connect_string'
     def self.open(connect_string)
       repo = GitRepository.new(connect_string)
-      #repo = GitRepository.new(Rugged::Repository.discover(connect_string))
     end
 
     # static method that should yeild to a git repo and then close it
@@ -116,6 +118,11 @@ module Repository
     def closed?
       # checks if the repo is closed
       return @closed
+    end
+
+    def get_repos
+      # Get rugged repository from GitRepository
+      return @repos
     end
 
     # Static method: Reports if a Git repository exists.
@@ -168,9 +175,6 @@ module Repository
     end
 
     def commit(transaction)
-      # carries out the actions on a git repo stored in a 
-      # transaction. Conflicts should are added to the transaction obejct
-
       # Carries out actions on a Git repository stored in
       # 'transaction'. In case of certain conflicts corresponding
       # Repositor::Conflict(s) are added to the transaction object
@@ -393,12 +397,8 @@ module Repository
     # This will only work for paths that have not been deleted from the repository.
     # GIT NOTE: This will just return the latest hash for now
     def latest_revision_number(path = nil, revision_number = nil)
-      debugger
-      
       #TODO This was using FS, specific to SVN. Need to look for git.
-
-      @repos.head;
-
+      return @repos.head
     end
 
     def get_revision_number_by_timestamp(target_timestamp, path = nil)
@@ -561,11 +561,14 @@ module Repository
     # Constructor; Check if revision is actually present in
     # repository
     def initialize(revision_number, repo)
-      @repo = repo
+      # Get rugged repository
+      @repo = repo.get_repos
       begin
-        @commit = repo.lookup(revision_number);
-        @timestamp = commit.time
-        if @timestamp.instance_of?(String)
+        # Get object using target of the reference (Object ID)
+        @commit = @repo.lookup(revision_number.target);
+
+        @timestamp = @commit.time
+         if @timestamp.instance_of?(String)
           @timestamp = Time.parse(@timestamp).localtime
         elsif @timestamp.instance_of?(Time)
           @timestamp = @timestamp.localtime
