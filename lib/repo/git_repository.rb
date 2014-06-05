@@ -6,11 +6,11 @@ require 'byebug'
 
 require File.join(File.dirname(__FILE__),'repository') # load repository module
 
-def commit_options(repo)
+def commit_options(repo, system_message)
   {
     author:  { email: "markus@markus.com", name: "Markus", time: Time.now },
     committer: { email: "markus@markus.com", name: "Markus", time: Time.now },
-    message: "Automatically create by the system",
+    message: system_message,
     tree: repo.index.write_tree(repo),
     parents: repo.empty? ? [] : [repo.head.target].compact,
     update_ref: "HEAD"
@@ -65,7 +65,7 @@ module Repository
       #Do an initial commit to create index. 
       oid = repo.write("Initial commit.", :blob)
       repo.index.add(:path => "README.md", :oid => oid, :mode => 0100644)
-      Rugged::Commit.create(repo, commit_options(repo))
+      Rugged::Commit.create(repo, commit_options(repo, "Creation of initial file"))
       return true
     end
 
@@ -177,7 +177,6 @@ module Repository
       @repos.index.each do |c|
         if files == c[:path]
           blob = @repos.lookup(c[:oid])
-          byebug
           return blob.content
         end
       end
@@ -464,13 +463,14 @@ module Repository
 
     # removes a file from a transaction and eventually from repository
     def remove_file(txn, path, expected_revision_number=0)
-      if latest_revision_number(path).to_i != expected_revision_number.to_i
-        raise Repository::FileOutOfSyncConflict.new(path)
-      end
-      if !__path_exists?(path)
-        raise Repository::FileDoesNotExistConflict.new(path)
-      end
-      txn.root.delete(path)
+      #if latest_revision_number(path).to_i != expected_revision_number.to_i
+      #  raise Repository::FileOutOfSyncConflict.new(path)
+      #end
+      #if !__path_exists?(path)
+      #  raise Repository::FileDoesNotExistConflict.new(path)
+      #end
+      @repos.index.remove(path);
+      Rugged::Commit.create(@repos,commit_options(@repos,"Removing file"))
       return txn
     end
 
@@ -507,7 +507,7 @@ module Repository
       repo = @repos
       oid = repo.write(file_data, :blob)
       repo.index.add(path: path, oid: oid, mode: 0100644)
-      Rugged::Commit.create(repo, commit_options(repo))
+      Rugged::Commit.create(repo, commit_options(repo,"Adding file"))
       #if (txn.root.check_path(path) == 0)
         #txn.root.make_file(path)
       #end
@@ -643,7 +643,6 @@ module Repository
 
     # Return all of the files in this repository at the root directory
     def files_at_path(repos)
-      byebug
       begin 
         files = Hash.new(nil)
       
